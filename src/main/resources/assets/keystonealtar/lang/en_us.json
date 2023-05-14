@@ -1,0 +1,11 @@
+{
+  "item.keystonealtar.amethyst" : "Amethyst",
+  "item.keystonealtar.example_key" : "Example Key",
+
+  "block.keystonealtar.keystone_block" : "Keystone Block",
+  "block.keystonealtar.amethyst_geode" : "Amethyst Geode",
+  "block.keystonealtar.keystone_altar" : "Keystone Altar",
+
+  "itemGroup.keystoneAltarTab" : "Keystone Altar",
+  "screen.keystonealtar.keystone_altar" : "Keystone Altar"
+}

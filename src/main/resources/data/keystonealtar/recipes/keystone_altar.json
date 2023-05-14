@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "KGK",
+    " G "
+  ],
+  "key": {
+    "#": {
+      "item": "keystonealtar:amethyst"
+    },
+    "K": {
+      "item": "keystonealtar:keystone_block"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "keystonealtar:keystone_altar"
+  }
+}

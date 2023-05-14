@@ -1,0 +1,26 @@
+{
+  "type": "keystonealtar:keystone",
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "keystonealtar:amethyst"
+    },
+    {
+      "item": "keystonealtar:keystone_block"
+    }
+  ],
+  "result": {
+    "item": "keystonealtar:example_key"
+  }
+}
