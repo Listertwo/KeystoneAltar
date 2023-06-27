@@ -75,14 +75,14 @@ public class KeystoneAltarBlock extends Block {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState p_225533_1_, World p_225533_2_, BlockPos p_225533_3_, PlayerEntity p_225533_4_, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
-        if(!p_225533_2_.isRemote()){
-            TileEntity tileEntity = p_225533_2_.getTileEntity(p_225533_3_);
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        if(!worldIn.isRemote()){
+            TileEntity tileEntity = worldIn.getTileEntity(pos);
 
             if(tileEntity instanceof KeystoneAltarTile){
-                INamedContainerProvider containerProvider = createContainerProvider(p_225533_2_, p_225533_3_);
+                INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
 
-                NetworkHooks.openGui(((ServerPlayerEntity)p_225533_4_), containerProvider, tileEntity.getPos());
+                NetworkHooks.openGui(((ServerPlayerEntity)player), containerProvider, tileEntity.getPos());
             } else {
                 throw new IllegalStateException("Our container Provider is missing!");
             }

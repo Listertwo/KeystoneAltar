@@ -1,4 +1,4 @@
-package com.listertwo.keystonealtar.data.recipies;
+package com.listertwo.keystonealtar.data.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -33,8 +33,17 @@ public class KeystoneAltarRecipe implements IKeystoneAltarRecipe {
     @Override
     public boolean matches(IInventory inv, World worldIn) {
         if(recipeItems.get(0).test(inv.getStackInSlot(0))){
-            return recipeItems.get(1).test(inv.getStackInSlot(1));
+            if(recipeItems.get(1).test(inv.getStackInSlot(1))) {
+                if (recipeItems.get(2).test(inv.getStackInSlot(2))) {
+                    if (recipeItems.get(3).test(inv.getStackInSlot(3))) {
+                        if (recipeItems.get(4).test(inv.getStackInSlot(4))) {
+                            return recipeItems.get(5).test(inv.getStackInSlot(5));
+                        }
+                    }
+                }
+            }
         }
+
         return false;
     }
 
@@ -53,6 +62,10 @@ public class KeystoneAltarRecipe implements IKeystoneAltarRecipe {
         return output.copy();
     }
 
+    public boolean getRedstoneSignal(){
+        return true;
+    }
+
     @Override
     public ResourceLocation getId() {
         return id;
@@ -67,7 +80,7 @@ public class KeystoneAltarRecipe implements IKeystoneAltarRecipe {
         return ModRecipeTypes.KEYSTONE_SERIALIZER.get();
     }
 
-    public static class KeystoneAltarRecipeType implements IRecipeType<KeystoneAltarRecipe>{
+    public static class KeystoneRecipeType implements IRecipeType<KeystoneAltarRecipe>{
         @Override
         public String toString() {
             return KeystoneAltarRecipe.TYPE_ID.toString();
@@ -78,22 +91,22 @@ public class KeystoneAltarRecipe implements IKeystoneAltarRecipe {
 
         @Override
         public KeystoneAltarRecipe read(ResourceLocation recipeId, JsonObject json) {
-            ItemStack result = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "result"));
+            ItemStack output = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "output"));
 
-            JsonArray ingredients = JSONUtils.getJsonArray(json, "ingregients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
+            JsonArray ingredients = JSONUtils.getJsonArray(json, "ingredients");
+            NonNullList<Ingredient> inputs = NonNullList.withSize(6, Ingredient.EMPTY);
 
             for(int i = 0; i < inputs.size(); i++){
                 inputs.set(i, Ingredient.deserialize(ingredients.get(i)));
             }
 
-            return new KeystoneAltarRecipe(recipeId, result, inputs);
+            return new KeystoneAltarRecipe(recipeId, output, inputs);
         }
 
         @Nullable
         @Override
         public KeystoneAltarRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(6, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++){
                 inputs.set(i, Ingredient.read(buffer));

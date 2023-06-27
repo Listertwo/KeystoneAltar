@@ -1,10 +1,7 @@
 package com.listertwo.keystonealtar.tileentity;
 
-import com.listertwo.keystonealtar.block.ModBlocks;
-import com.listertwo.keystonealtar.container.KeystoneAltarContainer;
-import com.listertwo.keystonealtar.data.recipies.KeystoneAltarRecipe;
-import com.listertwo.keystonealtar.data.recipies.ModRecipeTypes;
-import com.listertwo.keystonealtar.item.ModItems;
+import com.listertwo.keystonealtar.data.recipes.KeystoneAltarRecipe;
+import com.listertwo.keystonealtar.data.recipes.ModRecipeTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -87,7 +84,7 @@ public class KeystoneAltarTile  extends TileEntity  implements ITickableTileEnti
         return super.getCapability(cap, side);
     }
 
-    /*public void craft(){
+    public void craft(){
         Inventory inv = new Inventory(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++){
             inv.setInventorySlotContents(i, itemHandler.getStackInSlot(i));
@@ -96,25 +93,26 @@ public class KeystoneAltarTile  extends TileEntity  implements ITickableTileEnti
         Optional<KeystoneAltarRecipe> recipe = world.getRecipeManager().getRecipe(ModRecipeTypes.KEYSTONE_RECIPE, inv, world);
 
         recipe.ifPresent(iRecipe ->{
-            ItemStack result = iRecipe.getRecipeOutput();
+            ItemStack output = iRecipe.getRecipeOutput();
 
-            if() {
+            if(iRecipe.getRedstoneSignal()) {
                 itemHandler.extractItem(0, 1, false);
                 itemHandler.extractItem(1, 1, false);
                 itemHandler.extractItem(2, 1, false);
                 itemHandler.extractItem(3, 1, false);
                 itemHandler.extractItem(4, 1, false);
                 itemHandler.extractItem(5, 1, false);
-                itemHandler.insertItem(6, result, false);
+                itemHandler.insertItem(6, output, false);
             }
+
             markDirty();
         });
-    }*/
+    }
 
     @Override
     public void tick() {
         if(world.isRemote)
             return;
-        //craft();
+        craft();
     }
 }

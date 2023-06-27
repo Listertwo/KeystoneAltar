@@ -1,4 +1,4 @@
-package com.listertwo.keystonealtar.data.recipies;
+package com.listertwo.keystonealtar.data.recipes;
 
 import com.listertwo.keystonealtar.KeystoneAltarMod;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -14,7 +14,7 @@ public class ModRecipeTypes {
 
     public static final RegistryObject<KeystoneAltarRecipe.Serializer> KEYSTONE_SERIALIZER = RECIPE_SERIALIZER.register("keystone", KeystoneAltarRecipe.Serializer::new);
 
-    public static IRecipeType<KeystoneAltarRecipe> KEYSTONE_RECIPE = new KeystoneAltarRecipe.KeystoneAltarRecipeType();
+    public static IRecipeType<KeystoneAltarRecipe> KEYSTONE_RECIPE = new KeystoneAltarRecipe.KeystoneRecipeType();
 
     public static void register(IEventBus eventBus){
         RECIPE_SERIALIZER.register(eventBus);

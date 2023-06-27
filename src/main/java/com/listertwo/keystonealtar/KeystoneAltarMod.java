@@ -2,7 +2,7 @@ package com.listertwo.keystonealtar;
 
 import com.listertwo.keystonealtar.block.ModBlocks;
 import com.listertwo.keystonealtar.container.ModContainers;
-import com.listertwo.keystonealtar.data.recipies.ModRecipeTypes;
+import com.listertwo.keystonealtar.data.recipes.ModRecipeTypes;
 import com.listertwo.keystonealtar.item.ModItems;
 import com.listertwo.keystonealtar.screen.KeystoneAltarScreen;
 import com.listertwo.keystonealtar.tileentity.ModTileEntities;
@@ -25,8 +25,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(KeystoneAltarMod.MODID)

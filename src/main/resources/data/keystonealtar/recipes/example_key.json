@@ -20,7 +20,7 @@
       "item": "keystonealtar:keystone_block"
     }
   ],
-  "result": {
+  "output": {
     "item": "keystonealtar:example_key"
   }
 }

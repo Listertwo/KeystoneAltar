@@ -1,4 +1,4 @@
-package com.listertwo.keystonealtar.data.recipies;
+package com.listertwo.keystonealtar.data.recipes;
 
 import com.listertwo.keystonealtar.KeystoneAltarMod;
 import net.minecraft.inventory.IInventory;

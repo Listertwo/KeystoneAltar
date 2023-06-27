@@ -9,7 +9,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -23,6 +22,9 @@ public class ModBlocks {
 
     //Registries for the blocks
     public static final RegistryObject<Block> KEYSTONE_BLOCK = registerBlock("keystone_block", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
+    public static final RegistryObject<Block> GATE_BLOCK = registerBlock("gate_block", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(-1f)));
+    public static final RegistryObject<Block> GATE_KEYHOLE_BLOCK = registerBlock("gate_keyhole_block", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(-1f)));
+
     public static final RegistryObject<Block> AMETHYST_GEODE = registerBlock("amethyst_geode", () -> new AmethystGeode(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
     public static final RegistryObject<Block> KEYSTONE_ALTAR = registerBlock("keystone_altar", () -> new KeystoneAltarBlock(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.GLASS).harvestLevel(2).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 6.0f)));
 
