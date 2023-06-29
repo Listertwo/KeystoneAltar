@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "keystonealtar:block/gatestone_keyhole"
+    }
+  }
+}

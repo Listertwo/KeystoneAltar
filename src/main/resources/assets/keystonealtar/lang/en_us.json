@@ -5,6 +5,8 @@
   "block.keystonealtar.keystone_block" : "Keystone Block",
   "block.keystonealtar.amethyst_geode" : "Amethyst Geode",
   "block.keystonealtar.keystone_altar" : "Keystone Altar",
+  "block.keystonealtar.gatestone_block" : "Gatestone Block",
+  "block.keystonealtar.gatestone_keyhole" : "Gatestone Keyhole",
 
   "itemGroup.keystoneAltarTab" : "Keystone Altar",
   "screen.keystonealtar.keystone_altar" : "Keystone Altar"
