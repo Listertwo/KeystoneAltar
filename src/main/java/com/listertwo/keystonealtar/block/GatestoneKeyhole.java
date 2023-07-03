@@ -22,39 +22,23 @@ import net.minecraftforge.fml.network.NetworkHooks;
 import javax.annotation.Nullable;
 
 public class GatestoneKeyhole extends Block {
+
     public GatestoneKeyhole(Properties properties) {
         super(properties);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if(!worldIn.isRemote()){
-            TileEntity tileEntity = worldIn.getTileEntity(pos);
-
-            if(tileEntity instanceof GatestoneKeyholeTile){
-                INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
-
-                NetworkHooks.openGui(((ServerPlayerEntity)player), containerProvider, tileEntity.getPos());
-            } else {
-                throw new IllegalStateException("Our container Provider is missing!");
+            if(handIn == Hand.MAIN_HAND){
+                System.out.println("I right clicked a Gatestone Keyhole with my Main Hand!");
+            }
+            if(handIn == Hand.OFF_HAND){
+                System.out.println("I right clicked a Gatestone Keyhole with my Off Hand!");
             }
         }
-        return ActionResultType.SUCCESS;
+
+        return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
     }
-
-    private INamedContainerProvider createContainerProvider(World p_225533_2_, BlockPos p_225533_3_) {
-        return new INamedContainerProvider() {
-            @Override
-            public ITextComponent getDisplayName() {
-                return new TranslationTextComponent("screen.keystonealtar.gatestone_keyhole");
-            }
-
-            @Nullable
-            @Override
-            public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                return new KeystoneAltarContainer(i, p_225533_2_, p_225533_3_, playerInventory, playerEntity);
-            }
-        };
-    }
-
 }
