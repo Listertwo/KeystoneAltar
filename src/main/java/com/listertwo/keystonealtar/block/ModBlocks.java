@@ -23,8 +23,8 @@ public class ModBlocks {
     //Registries for the blocks
     public static final RegistryObject<Block> KEYSTONE_BLOCK = registerBlock("keystone_block", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
     public static final RegistryObject<Block> GATESTONE_BLOCK = registerBlock("gatestone_block", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(-1f)));
-    public static final RegistryObject<Block> GATESTONE_KEYHOLE = registerBlock("gatestone_keyhole", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(-1f)));
 
+    public static final RegistryObject<Block> GATESTONE_KEYHOLE = registerBlock("gatestone_keyhole", () -> new GatestoneKeyhole(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(-1f)));
     public static final RegistryObject<Block> AMETHYST_GEODE = registerBlock("amethyst_geode", () -> new AmethystGeode(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(3f)));
     public static final RegistryObject<Block> KEYSTONE_ALTAR = registerBlock("keystone_altar", () -> new KeystoneAltarBlock(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.GLASS).harvestLevel(2).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1.5f, 6.0f)));
 
